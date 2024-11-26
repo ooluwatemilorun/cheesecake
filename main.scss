@@ -1,0 +1,606 @@
+$choco: #6F4436CC;
+$button: #523728;
+$cream: #FFF8E1;
+$yellow:#FCAE36;
+$white:#FFFFFFFF;
+$shadow: 0px 4px 4px 0px #00000040;
+$active: 0px 2px 2px 0px #00000040;
+$large: 3.5rem;
+$medium: 3rem;
+$small: 2.5rem;
+$smaller: 1.25rem;
+
+*{
+    font-size: 1rem;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+@mixin flex__column() {
+    display: flex;
+    flex-direction: column;
+}
+
+@mixin flex__row(){
+    display: flex;
+    flex-direction: row;
+}
+
+@mixin self-centering(){
+    justify-self: center;
+    align-self: center;
+}
+
+@mixin margin-padding{
+    padding: .5rem;
+    margin: .5rem;
+}
+
+@mixin centered{
+    justify-content: center;
+    align-items: center;
+}
+
+// @mixin theme($theme: DarkGray) {
+//     background: $theme;
+//     box-shadow: 0 0 1px rgba($theme, .25);
+//     color: #fff;
+// }
+  
+body{
+    // width: 100dvw;
+    height: 100dvh;
+    margin: 0;
+    padding: 0;
+    background-image: url(images/MAIN\ BG.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+button{
+    width: 9rem;
+    height: 3rem;
+    padding: 1.5rem, 1.5rem, 1.5rem,  1.5rem;
+    border-radius: 6.25rem;
+    border: none;
+    box-shadow: $shadow;
+    font-family: Poppins;
+    font-weight: 600;
+    line-height: 18px;
+
+    &:active{
+        box-shadow: $active;
+    }
+}
+
+h1, h3, button{
+    color: $button;
+}
+
+h3{
+    @include margin-padding();
+    font-size: $small;
+}
+
+h4{
+    font-size: $smaller;
+}
+
+.card{
+    @include flex__column();
+    @include centered();
+    @include margin-padding();
+    border: none;
+    border-radius: 1.5rem;
+    // height: 60%;
+    width: 18rem;
+    background-color: $cream;
+    box-shadow: 2px 9px 42px 0px #4D422C36;
+    box-shadow: -2px -9px 42px 0px #4D422C36;
+
+    img{
+        width: 16rem;
+        height: 16rem;
+        @include margin-padding();
+    }
+
+    .card__info{
+        @include flex__column();
+        // @include centered();
+        // @include margin-padding();
+        width: 16rem;
+    }
+}
+
+#container{
+    opacity: 70%;
+    width: 100dvw;
+    height: 100dvh;
+    @include flex__column();
+}
+
+main{
+    @include flex__column();
+    padding: .25rem;
+
+    nav{
+        @include flex__row();
+        justify-content: space-between;
+        align-items: center;
+
+        img{
+            height: 165px;
+            width: 165px;
+        }
+
+        .nav__menu{
+            background: $choco;
+            position: absolute;
+            width: 100%;
+            height: 50dvh;
+            top: -50vh;
+            align-items: center;
+            text-align: center;
+            // transition: transform 0.3s ease;
+            @include flex__column();
+
+            .links{
+                @include flex__column();
+                margin: 1rem 0;
+
+
+                a{
+                    text-decoration: none;
+                    color: $white;
+                    margin: 1rem 0;
+
+                    &:hover{
+                        font-size: $smaller;
+                    }
+                }
+            }
+
+            &.active{
+                top: 0;
+                // position: fixed;
+            }
+        }
+        
+        .hamburger-menu {
+            border: none;
+            border-radius: .25rem;
+            cursor: pointer;
+            background: $button;
+            color: $cream;
+            display: flex;
+            flex-direction: column;
+            @include centered();
+            width: 2rem;
+            margin: 0 3rem;
+            z-index: 1;
+        }
+    }
+
+    .homepage{
+        @include flex__column();
+        margin: 0 .5rem .5rem .5rem;
+        
+        .left{
+            order: 2;
+            @include self-centering();
+            text-align: center;
+            
+            h1{
+                font-size: $large;
+                padding: .5rem;
+            }
+
+            p{
+                font-size: $smaller;
+                padding: .5rem;
+            }
+
+            & .colored{
+                background-color: $button;
+                color: $white;
+            }
+        }
+    }
+
+        .right{
+            order: 1;
+            @include self-centering();
+
+            img{
+                height: 25rem;
+                width: 25rem;
+            }
+        }
+}
+
+.more--info, .menu{
+    @include flex__column();
+    @include centered();
+}
+
+.more--info{
+    @include flex__column();
+    @include centered();
+
+    .left{
+        @include margin-padding();
+
+        & img{
+            width: 500px;
+            height: 500px;
+        }
+    }
+
+    .right{
+        @include margin-padding();
+        @include flex__column();
+        align-items: center;
+        text-align: center;
+
+        p{
+            width: 85%;
+            margin: .5rem;
+        }
+
+        & .colored{
+            background-color: $button;
+            color: $white;
+        }
+    }
+}
+
+.menu{
+    & .top, & .bottom{
+        @include margin-padding();
+    }
+
+    & .bottom{
+        @include flex__column();
+        @include centered();
+
+        & .card{
+            height: 25rem;
+
+            & img{
+                height: 15rem;
+                width: 15rem;
+            }
+
+            .card__info{
+
+                .box{
+                    @include flex__row();
+                    @include margin-padding();
+                    justify-content: space-between;
+                    text-align: center;
+
+                    span{
+                        width: 3rem;
+                    }
+                }
+            }
+        }
+    }
+
+    .action{
+
+        a{
+            text-decoration: none;
+        }
+    }
+}
+
+.blog{
+
+    .top{
+        @include margin-padding();
+        @include flex__column();
+        @include centered();
+    }
+
+    .bottom{
+        @include flex__column();
+        @include centered();
+
+        & .card{
+
+            img{
+                border-radius: 1.5rem;
+            }
+
+            .card__info{
+
+                h4{
+                    margin: .5rem 0;
+                }
+
+                .action{
+                    margin: .25rem 0;
+
+                    a{
+                        text-decoration: none;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.footer{
+    @include flex__column();
+    @include margin-padding();
+
+    .contact{
+
+        .left, .right{
+            @include margin-padding();
+            @include centered();
+            
+        }
+
+        .left{
+            .top{
+                @include flex__column();
+                @include centered();
+                text-align: center;
+                // padding: 0 .5rem;
+            }
+    
+            .img{
+                height: 20rem;
+                width: 20rem;
+                margin: .5rem auto;
+    
+                img{
+                    height: 20rem;
+                    width: 20rem;
+                }
+            }
+        }
+
+        .right{
+            // @include flex__column();
+            // @include centered();
+
+            form{
+                // @include margin-padding();
+                @include flex__column();
+                @include centered();
+                
+                input, textarea{
+                    margin: .5rem;
+                    border: none;
+                    outline: none;
+                    border-radius: 3rem;
+                    width: 20rem;
+                }
+
+                input{
+                    border-radius: 3rem;
+                    padding: .75rem;
+                    box-shadow: $shadow;
+                }
+
+                textarea{
+                    border-radius: 1rem;
+                    padding: 1rem;
+                    height: 7rem;
+                }
+
+                button{
+                    width: 20rem;
+                    margin: .5rem;
+                    border: none;
+                    background: $yellow;
+
+                }
+            }
+        }
+    }
+
+    .foot{
+        @include flex__column();
+        @include centered();
+
+        .socials{
+            @include flex__row();
+            
+
+            .icon{
+                @include flex__row();
+                @include margin-padding();
+                justify-content: center;
+                align-items: center;
+                background: $white;
+                border-radius: 50%;
+                box-shadow: $shadow;
+            }
+
+            .icon:first-child{
+                background: $yellow;
+            }
+
+            img{
+                width: 1.625rem;
+                height: 1.625rem;
+            }
+        }
+
+        .copy{
+            margin: .5rem 0;
+
+            & .white{
+                color: $white;
+            }
+
+        }
+    }
+}
+
+/* If the screen size is 900px wide or more... */
+@media screen and (min-width: 900px) {
+
+    $choco: #6F4436CC;
+    $button: #523728;
+    $cream: #FFF8E1;
+    $yellow:#FCAE36;
+    $white:#FFFFFFFF;
+    $shadow: 0px 4px 4px 0px #00000040;
+    $large: 3.5rem;
+    $medium: 3rem;
+    $small: 2.5rem;
+    $smaller: 1.25rem;
+    
+    *{
+        font-size: 1rem;
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+    }
+
+    @mixin flex__column() {
+        display: flex;
+        flex-direction: column;
+    }
+    
+    @mixin flex__row(){
+        display: flex;
+        flex-direction: row;
+    }
+    
+    @mixin self-centering(){
+        justify-self: center;
+        align-self: center;
+    }
+    
+    @mixin margin-padding{
+        padding: .5rem;
+        margin: .5rem;
+    }
+    
+    @mixin centered{
+        justify-content: center;
+        align-items: center;
+    }
+    
+    #container{
+        // border: 1px solid #000;
+        width: 85%;
+        height: 100dvh;
+        margin: 0 auto;
+    }
+
+    main{
+
+        nav{
+            display: flex;
+            justify-content: space-around;
+
+            .nav__menu{
+                position: relative;
+                background: none;
+                @include flex__row();
+                top: 0;
+                width: 50dvw;
+                gap: 1rem;
+    
+                .links{
+                    @include flex__row();
+                    justify-content: space-evenly;
+                    align-items: center;
+                    width: 40dvw;
+                    height: 3rem;
+                    padding: .25rem;
+                    background: $choco;
+                    color: $white;
+        
+                    a{
+                        text-decoration: none;
+                        color: $white;
+                        margin: 0 .5rem;
+                    }
+                }
+            }
+            .hamburger-menu{
+                display: none;
+            }
+        }
+    
+        .homepage{
+            @include flex__row();
+        }
+    }
+    
+    .more--info{
+        @include flex__row();
+    
+        .left{
+            order: 2;
+        }
+    
+        .right{
+            order: 1;
+        }
+    }
+
+    .menu{
+        margin: 1rem 0;
+        flex-direction: column;
+    
+        .bottom{
+            @include flex__row();
+        }
+
+        .action{
+            align-self: flex-end;
+        }
+    }
+
+    .blog{
+        margin: 1rem 0;
+
+        & .bottom{
+            flex-direction: row;
+        }
+    }
+
+    .footer{
+        margin: 1rem 0;
+
+        & .contact{
+            @include flex__row();
+            justify-content: space-between;
+            align-items: center;
+
+            & .left{
+                width: 40%;
+                margin: .5rem;
+            }
+
+            & .right{
+                margin: .5rem;
+                width: 40%;
+            }
+        }
+    }
+}
+
+/* If the screen size is 980px wide or more... */
+@media screen and (min-width: 980px) {
+    
+    #container{
+        // border: 1px solid #000;
+        width: 75%;
+        height: 100dvh;
+        margin: 0 auto;
+    }
+}
+ 

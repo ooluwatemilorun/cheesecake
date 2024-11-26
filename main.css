@@ -1,0 +1,461 @@
+* {
+  font-size: 1rem;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  height: 100dvh;
+  margin: 0;
+  padding: 0;
+  background-image: url(images/MAIN\ BG.png);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  background-attachment: fixed;
+}
+
+button {
+  width: 9rem;
+  height: 3rem;
+  padding: 1.5rem, 1.5rem, 1.5rem, 1.5rem;
+  border-radius: 6.25rem;
+  border: none;
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.2509803922);
+  font-family: Poppins;
+  font-weight: 600;
+  line-height: 18px;
+}
+button:active {
+  box-shadow: 0px 2px 2px 0px rgba(0, 0, 0, 0.2509803922);
+}
+
+h1, h3, button {
+  color: #523728;
+}
+
+h3 {
+  padding: 0.5rem;
+  margin: 0.5rem;
+  font-size: 2.5rem;
+}
+
+h4 {
+  font-size: 1.25rem;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 0.5rem;
+  margin: 0.5rem;
+  border: none;
+  border-radius: 1.5rem;
+  width: 18rem;
+  background-color: #FFF8E1;
+  box-shadow: 2px 9px 42px 0px rgba(77, 66, 44, 0.2117647059);
+  box-shadow: -2px -9px 42px 0px rgba(77, 66, 44, 0.2117647059);
+}
+.card img {
+  width: 16rem;
+  height: 16rem;
+  padding: 0.5rem;
+  margin: 0.5rem;
+}
+.card .card__info {
+  display: flex;
+  flex-direction: column;
+  width: 16rem;
+}
+
+#container {
+  opacity: 70%;
+  width: 100dvw;
+  height: 100dvh;
+  display: flex;
+  flex-direction: column;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  padding: 0.25rem;
+}
+main nav {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+main nav img {
+  height: 165px;
+  width: 165px;
+}
+main nav .nav__menu {
+  background: rgba(111, 68, 54, 0.8);
+  position: absolute;
+  width: 100%;
+  height: 50dvh;
+  top: -50vh;
+  align-items: center;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+}
+main nav .nav__menu .links {
+  display: flex;
+  flex-direction: column;
+  margin: 1rem 0;
+}
+main nav .nav__menu .links a {
+  text-decoration: none;
+  color: white;
+  margin: 1rem 0;
+}
+main nav .nav__menu .links a:hover {
+  font-size: 1.25rem;
+}
+main nav .nav__menu.active {
+  top: 0;
+}
+main nav .hamburger-menu {
+  border: none;
+  border-radius: 0.25rem;
+  cursor: pointer;
+  background: #523728;
+  color: #FFF8E1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 2rem;
+  margin: 0 3rem;
+  z-index: 1;
+}
+main .homepage {
+  display: flex;
+  flex-direction: column;
+  margin: 0 0.5rem 0.5rem 0.5rem;
+}
+main .homepage .left {
+  order: 2;
+  justify-self: center;
+  align-self: center;
+  text-align: center;
+}
+main .homepage .left h1 {
+  font-size: 3.5rem;
+  padding: 0.5rem;
+}
+main .homepage .left p {
+  font-size: 1.25rem;
+  padding: 0.5rem;
+}
+main .homepage .left .colored {
+  background-color: #523728;
+  color: white;
+}
+main .right {
+  order: 1;
+  justify-self: center;
+  align-self: center;
+}
+main .right img {
+  height: 25rem;
+  width: 25rem;
+}
+
+.more--info, .menu {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.more--info {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.more--info .left {
+  padding: 0.5rem;
+  margin: 0.5rem;
+}
+.more--info .left img {
+  width: 500px;
+  height: 500px;
+}
+.more--info .right {
+  padding: 0.5rem;
+  margin: 0.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+.more--info .right p {
+  width: 85%;
+  margin: 0.5rem;
+}
+.more--info .right .colored {
+  background-color: #523728;
+  color: white;
+}
+
+.menu .top, .menu .bottom {
+  padding: 0.5rem;
+  margin: 0.5rem;
+}
+.menu .bottom {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.menu .bottom .card {
+  height: 25rem;
+}
+.menu .bottom .card img {
+  height: 15rem;
+  width: 15rem;
+}
+.menu .bottom .card .card__info .box {
+  display: flex;
+  flex-direction: row;
+  padding: 0.5rem;
+  margin: 0.5rem;
+  justify-content: space-between;
+  text-align: center;
+}
+.menu .bottom .card .card__info .box span {
+  width: 3rem;
+}
+.menu .action a {
+  text-decoration: none;
+}
+
+.blog .top {
+  padding: 0.5rem;
+  margin: 0.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.blog .bottom {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.blog .bottom .card img {
+  border-radius: 1.5rem;
+}
+.blog .bottom .card .card__info h4 {
+  margin: 0.5rem 0;
+}
+.blog .bottom .card .card__info .action {
+  margin: 0.25rem 0;
+}
+.blog .bottom .card .card__info .action a {
+  text-decoration: none;
+}
+
+.footer {
+  display: flex;
+  flex-direction: column;
+  padding: 0.5rem;
+  margin: 0.5rem;
+}
+.footer .contact .left, .footer .contact .right {
+  padding: 0.5rem;
+  margin: 0.5rem;
+  justify-content: center;
+  align-items: center;
+}
+.footer .contact .left .top {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+.footer .contact .left .img {
+  height: 20rem;
+  width: 20rem;
+  margin: 0.5rem auto;
+}
+.footer .contact .left .img img {
+  height: 20rem;
+  width: 20rem;
+}
+.footer .contact .right form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.footer .contact .right form input, .footer .contact .right form textarea {
+  margin: 0.5rem;
+  border: none;
+  outline: none;
+  border-radius: 3rem;
+  width: 20rem;
+}
+.footer .contact .right form input {
+  border-radius: 3rem;
+  padding: 0.75rem;
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.2509803922);
+}
+.footer .contact .right form textarea {
+  border-radius: 1rem;
+  padding: 1rem;
+  height: 7rem;
+}
+.footer .contact .right form button {
+  width: 20rem;
+  margin: 0.5rem;
+  border: none;
+  background: #FCAE36;
+}
+.footer .foot {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.footer .foot .socials {
+  display: flex;
+  flex-direction: row;
+}
+.footer .foot .socials .icon {
+  display: flex;
+  flex-direction: row;
+  padding: 0.5rem;
+  margin: 0.5rem;
+  justify-content: center;
+  align-items: center;
+  background: white;
+  border-radius: 50%;
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.2509803922);
+}
+.footer .foot .socials .icon:first-child {
+  background: #FCAE36;
+}
+.footer .foot .socials img {
+  width: 1.625rem;
+  height: 1.625rem;
+}
+.footer .foot .copy {
+  margin: 0.5rem 0;
+}
+.footer .foot .copy .white {
+  color: white;
+}
+
+/* If the screen size is 900px wide or more... */
+@media screen and (min-width: 900px) {
+  * {
+    font-size: 1rem;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+  #container {
+    width: 85%;
+    height: 100dvh;
+    margin: 0 auto;
+  }
+  main nav {
+    display: flex;
+    justify-content: space-around;
+  }
+  main nav .nav__menu {
+    position: relative;
+    background: none;
+    display: flex;
+    flex-direction: row;
+    top: 0;
+    width: 50dvw;
+    gap: 1rem;
+  }
+  main nav .nav__menu .links {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 40dvw;
+    height: 3rem;
+    padding: 0.25rem;
+    background: rgba(111, 68, 54, 0.8);
+    color: white;
+  }
+  main nav .nav__menu .links a {
+    text-decoration: none;
+    color: white;
+    margin: 0 0.5rem;
+  }
+  main nav .hamburger-menu {
+    display: none;
+  }
+  main .homepage {
+    display: flex;
+    flex-direction: row;
+  }
+  .more--info {
+    display: flex;
+    flex-direction: row;
+  }
+  .more--info .left {
+    order: 2;
+  }
+  .more--info .right {
+    order: 1;
+  }
+  .menu {
+    margin: 1rem 0;
+    flex-direction: column;
+  }
+  .menu .bottom {
+    display: flex;
+    flex-direction: row;
+  }
+  .menu .action {
+    align-self: flex-end;
+  }
+  .blog {
+    margin: 1rem 0;
+  }
+  .blog .bottom {
+    flex-direction: row;
+  }
+  .footer {
+    margin: 1rem 0;
+  }
+  .footer .contact {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .footer .contact .left {
+    width: 40%;
+    margin: 0.5rem;
+  }
+  .footer .contact .right {
+    margin: 0.5rem;
+    width: 40%;
+  }
+}
+/* If the screen size is 980px wide or more... */
+@media screen and (min-width: 980px) {
+  #container {
+    width: 75%;
+    height: 100dvh;
+    margin: 0 auto;
+  }
+}/*# sourceMappingURL=main.css.map */
